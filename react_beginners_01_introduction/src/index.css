@@ -1,0 +1,26 @@
+body {
+    font-family: monospace;
+}
+
+button {
+    font-family: monospace !important;
+    font-weight: bold !important;
+    margin: 10px !important;
+}
+
+.alert {
+    font-family: monospace;
+    font-weight: bold;
+    font-size: 23px;
+}
+
+li {
+    font-family: monospace;
+    font-weight: bold;
+    padding: 10px;
+}
+
+h1 {
+    padding: 10px;
+    font-family: monospace;
+}
