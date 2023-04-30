@@ -1,0 +1,130 @@
+html,
+body {
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  background-color: #333333 !important;
+  font-family: monospace;
+  font-size: 13px;
+}
+
+.container {
+  width: 650px !important;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #222222;
+  margin: 5px auto;
+  border-radius: 8px;
+  box-shadow: 2px 2px 5px 5px deeppink;
+  padding: 10px;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+table {
+  width: 95%;
+  border-collapse: collapse;
+  border-spacing: 0px;
+  border-top: none;
+  border-bottom: 1px solid white;
+  border-top: 1px solid #222222;
+  margin: 0 auto;
+}
+
+table td {
+  padding: 8px;
+  font-size: 15px;
+  color: white;
+  border: 1px #222222;
+}
+
+table th {
+  text-align: left;
+  font-size: 17px;
+  color: cyan;
+  font-weight: normal;
+  border: 1px #222222;
+}
+
+.form_box {
+  background-color: cyan;
+  border-radius: 8px;
+  padding: 10px 10px;
+  color: #222222;
+  font-size: 16px;
+  font-weight: bold;
+  flex-direction: column;
+  width: 350px;
+  margin: 0 auto;
+  margin-bottom: 20px;
+  border: white;
+  font-family: monospace;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+form {
+  justify-content: center;
+  font-size: 16px;
+}
+
+.main_title {
+  font-size: 33px;
+  font-family: monospace;
+  text-shadow: 2px 2px 5px deeppink;
+  text-align: center;
+  color: yellow;
+  margin-bottom: 20px;
+}
+
+.heading_name {
+  font-size: 23px;
+  color: yellow;
+  font-family: monospace;
+  margin-bottom: 5px;
+  text-align: center;
+}
+
+.btn:hover {
+      background-color: yellow !important;
+      cursor: pointer;
+}
+
+
+/* Styles for mobile screens */
+@media (max-width: 650px) {
+  html,
+    body {
+      display: flex;
+      font-size: 10px;
+    }
+
+  .container {
+    width: 400px !important;
+    margin: 10px 10px;
+    border-radius: 5px;
+    box-shadow: 2px 2px 5px 5px deeppink;
+    padding: 5px;
+    }
+
+  table {
+    min-width: 350px;
+    margin: 0 auto;
+    }
+    
+  table th {
+    font-size: 13px;
+  }
+
+  table td {
+    font-size: 11px;
+  }
+
+  .heading_name {
+   font-size: 19px;
+    margin-bottom: 10px;
+    text-align: center;
+  }
+}
