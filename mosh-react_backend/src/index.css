@@ -1,0 +1,10 @@
+html,
+body {
+  margin: 0 auto;
+  background: #333333;
+  font-family: monospace;
+  color: white;
+  align-items: center;
+  text-align: center;
+  padding: 30px;
+}

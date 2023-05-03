@@ -1,0 +1,107 @@
+The useRef hook is a built-in hook in React that provides a way to reference a mutable 
+value that persists across renders. It returns an object with a single property, current, 
+which is initialized to the argument passed to useRef().
+
+Here's an example of how you can use useRef to reference an element in the DOM:
+
+javascript
+
+import { useRef } from 'react';
+
+function MyComponent() {
+  const inputRef = useRef<HTMLInputElement>(null);
+
+  const handleClick = () => {
+    if (inputRef.current) {
+      inputRef.current.focus();
+    }
+  };
+
+  return (
+    <div>
+      <input type="text" ref={inputRef} />
+      <button onClick={handleClick}>Focus</button>
+    </div>
+  );
+}
+
+In this example, inputRef is a reference to an input element in the DOM. It's initialized 
+to null, because the element hasn't been rendered yet. When the component is rendered, the 
+ref attribute is set to inputRef, so that inputRef.current will refer to the input element 
+in the DOM.
+
+In the handleClick function, we check that inputRef.current is not null, and then call the 
+focus() method on the input element. This will give focus to the input element, bringing up 
+the keyboard on mobile devices and allowing the user to start typing.
+
+useRef is often used to store values that don't affect the rendering of the component, but 
+that need to persist across renders. For example, you might use useRef to store a timer ID 
+for a setTimeout call, or to store a mutable object that's used in a callback function.
+
+
+App.tsx:
+
+In this code, a React functional component called App is defined. Within this component, 
+two useEffect hooks are used to perform side-effects after the component is rendered.
+
+The first useEffect hook is used to set focus on an input element when the component is 
+rendered. This is done using a useRef hook to create a reference to the input element. 
+The useRef hook returns an object with a current property, which is initially set to null. 
+The ref object is assigned this value initially. The current property is used to reference 
+the input element when the useEffect hook runs.
+
+The useEffect hook is triggered after every render of the component. When it runs, it checks 
+if the ref.current value is not null. If it is not null, it means that the input element has 
+been rendered in the DOM and is available for use. In this case, the focus() method is called 
+on the input element, which sets the focus on the input element, making it ready for user input.
+
+The second useEffect hook changes the title of the page to "My App". This is done by setting 
+the document.title property to the desired value. This effect is triggered after every render
+of the component.
+
+In the return statement, the input element is rendered with the ref object passed as a prop. 
+This creates a reference to the input element that can be used by the first useEffect hook to 
+set focus on the input element.
+
+
+ChatServer.tsx
+In React, mounting refers to the process of adding a component to the DOM. This happens when 
+a component is first rendered. During the mounting phase, React will call the useEffect 
+function with an empty dependency array ([]) once the component is added to the DOM. This 
+is because the useEffect function is called after every render, including the first one.
+
+On the other hand, unmounting refers to the process of removing a component from the DOM. 
+This happens when a component is no longer needed and is removed from the page. During the 
+unmounting phase, React will call the useEffect function with a cleanup function. This 
+cleanup function is called right before the component is removed from the DOM. This is because 
+the useEffect function is called after every render, including the last one.
+
+The cleanup function is defined within the useEffect function and is returned from it. This 
+function is useful for cleaning up any resources that were created during the rendering of 
+the component, such as event listeners, timers, or subscriptions to external data sources. By 
+performing cleanup in the useEffect function, you can ensure that any resources are properly 
+released before the component is removed from the DOM.
+
+Here's an example of how you can use useEffect to handle mounting and unmounting:
+
+import React, { useEffect } from 'react';
+
+function MyComponent() {
+  useEffect(() => {
+    // This code runs when the component is mounted
+    console.log('Component mounted');
+
+    // Return a function that will be called when the component is unmounted
+    return () => {
+      console.log('Component unmounted');
+    };
+  }, []);
+
+  return (
+    <div>Hello, world!</div>
+  );
+}
+
+In this example, the useEffect function is called with an empty dependency array ([]), 
+which means it will only run once when the component is first mounted. The cleanup 
+function is defined to log a message when the component is unmounted.
